@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('weather'), ,
+        title: const Text('weather'),
       ),
       body: IsLoadingContainer(
         builder: (BuildContext context, bool isLoading) {
@@ -28,7 +28,6 @@ class HomePage extends StatelessWidget {
                 return Column(
                   children: <Widget>[
                     if (location != null) Text('Location: ${location.city}'),
-                    if (weather != null) Text('Weather: ${weather.current.temp}')
                   ],
                 );
               });

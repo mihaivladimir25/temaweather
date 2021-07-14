@@ -23,7 +23,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   double get lat;
 
-  double get lan;
+  double get lon;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 

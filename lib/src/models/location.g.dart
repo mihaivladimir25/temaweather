@@ -30,8 +30,8 @@ class _$LocationSerializer implements StructuredSerializer<Location> {
       serializers.serialize(object.zip, specifiedType: const FullType(String)),
       'lat',
       serializers.serialize(object.lat, specifiedType: const FullType(double)),
-      'lan',
-      serializers.serialize(object.lan, specifiedType: const FullType(double)),
+      'lon',
+      serializers.serialize(object.lon, specifiedType: const FullType(double)),
     ];
 
     return result;
@@ -68,8 +68,8 @@ class _$LocationSerializer implements StructuredSerializer<Location> {
           result.lat = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double;
           break;
-        case 'lan':
-          result.lan = serializers.deserialize(value,
+        case 'lon':
+          result.lon = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double;
           break;
       }
@@ -91,7 +91,7 @@ class _$Location extends Location {
   @override
   final double lat;
   @override
-  final double lan;
+  final double lon;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (new LocationBuilder()..update(updates)).build();
@@ -102,14 +102,14 @@ class _$Location extends Location {
       required this.city,
       required this.zip,
       required this.lat,
-      required this.lan})
+      required this.lon})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(status, 'Location', 'status');
     BuiltValueNullFieldError.checkNotNull(country, 'Location', 'country');
     BuiltValueNullFieldError.checkNotNull(city, 'Location', 'city');
     BuiltValueNullFieldError.checkNotNull(zip, 'Location', 'zip');
     BuiltValueNullFieldError.checkNotNull(lat, 'Location', 'lat');
-    BuiltValueNullFieldError.checkNotNull(lan, 'Location', 'lan');
+    BuiltValueNullFieldError.checkNotNull(lon, 'Location', 'lon');
   }
 
   @override
@@ -128,7 +128,7 @@ class _$Location extends Location {
         city == other.city &&
         zip == other.zip &&
         lat == other.lat &&
-        lan == other.lan;
+        lon == other.lon;
   }
 
   @override
@@ -140,7 +140,7 @@ class _$Location extends Location {
                     city.hashCode),
                 zip.hashCode),
             lat.hashCode),
-        lan.hashCode));
+        lon.hashCode));
   }
 
   @override
@@ -151,7 +151,7 @@ class _$Location extends Location {
           ..add('city', city)
           ..add('zip', zip)
           ..add('lat', lat)
-          ..add('lan', lan))
+          ..add('lon', lon))
         .toString();
   }
 }
@@ -179,9 +179,9 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   double? get lat => _$this._lat;
   set lat(double? lat) => _$this._lat = lat;
 
-  double? _lan;
-  double? get lan => _$this._lan;
-  set lan(double? lan) => _$this._lan = lan;
+  double? _lon;
+  double? get lon => _$this._lon;
+  set lon(double? lon) => _$this._lon = lon;
 
   LocationBuilder();
 
@@ -193,7 +193,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _city = $v.city;
       _zip = $v.zip;
       _lat = $v.lat;
-      _lan = $v.lan;
+      _lon = $v.lon;
       _$v = null;
     }
     return this;
@@ -222,7 +222,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
                 BuiltValueNullFieldError.checkNotNull(city, 'Location', 'city'),
             zip: BuiltValueNullFieldError.checkNotNull(zip, 'Location', 'zip'),
             lat: BuiltValueNullFieldError.checkNotNull(lat, 'Location', 'lat'),
-            lan: BuiltValueNullFieldError.checkNotNull(lan, 'Location', 'lan'));
+            lon: BuiltValueNullFieldError.checkNotNull(lon, 'Location', 'lon'));
     replace(_$result);
     return _$result;
   }

@@ -7,11 +7,11 @@ import 'package:weatherapp/src/models/weather.dart';
 class WeatherContainer extends StatelessWidget {
   const WeatherContainer({Key? key, required this.builder}) : super(key: key);
 
-  final ViewModelBuilder<Weather?> builder;
+  final ViewModelBuilder<Weather> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, Weather?>(
+    return StoreConnector<AppState, Weather>(
       converter: (Store<AppState> store) => store.state.weather,
       builder: builder,
     );

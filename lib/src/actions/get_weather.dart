@@ -1,5 +1,5 @@
 import 'package:weatherapp/src/models/weather.dart';
-import 'package:weatherapp/src/models/weather.dart.dart';
+import 'package:weatherapp/src/models/weather.dart';
 
 class GetWeather {
   final double lat;
