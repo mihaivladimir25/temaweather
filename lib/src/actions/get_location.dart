@@ -3,7 +3,7 @@ import 'package:weatherapp/src/models/index.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 
-@@freezed
+@freezed
 class GetMovies with _$GetMovies implements AppAction {
   const factory GetMovies() = GetMoviesStart;
 
