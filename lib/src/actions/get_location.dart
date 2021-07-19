@@ -1,32 +1,14 @@
 import 'package:weatherapp/src/models/location.dart';
+import 'package:weatherapp/src/models/index.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class GetLocation {
-  const GetLocation();
 
-  @override
-  String toString() {
-    return 'GetLocation{}';
-  }
-}
+@@freezed
+class GetMovies with _$GetMovies implements AppAction {
+  const factory GetMovies() = GetMoviesStart;
 
-class GetLocationSuccessful {
-  GetLocationSuccessful(this.location);
+  const factory GetMovies.successful() = GetMoviesSuccessful;
 
-  final Location location;
-
-  @override
-  String toString() {
-    return 'GetLocationSuccessful{location: $location}';
-  }
-}
-
-class GetLocationError {
-  GetLocationError(this.error);
-
-  final Object error;
-
-  @override
-  String toString() {
-    return 'GetLocationError{error: $error}';
-  }
+  @Implements(ErrorAction)
+  const factory GetMovies.error(Object error, StackTrace stackTrace) = GetMoviesError;
 }

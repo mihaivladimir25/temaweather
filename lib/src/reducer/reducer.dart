@@ -21,13 +21,13 @@ AppState _getLocation(AppState state, GetLocation action) {
 AppState _getLocationSuccessful(AppState state, GetLocationSuccessful action) {
   return state.rebuild((AppStateBuilder b) {
     b
-        ..location = action.location.toBuilder()
-        ..isLoading = false;
+      ..location = action.location.toBuilder()
+      ..isLoading = false;
   });
 }
 
 AppState _getLocationError(AppState state, GetLocationError action) {
-  return state.rebuild((AppStateBuilder b){
+  return state.rebuild((AppStateBuilder b) {
     b.isLoading = false;
   });
 }

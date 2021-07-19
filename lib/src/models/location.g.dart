@@ -19,11 +19,9 @@ class _$LocationSerializer implements StructuredSerializer<Location> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'status',
-      serializers.serialize(object.status,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.status, specifiedType: const FullType(String)),
       'country',
-      serializers.serialize(object.country,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.country, specifiedType: const FullType(String)),
       'city',
       serializers.serialize(object.city, specifiedType: const FullType(String)),
       'zip',
@@ -49,28 +47,22 @@ class _$LocationSerializer implements StructuredSerializer<Location> {
       final Object? value = iterator.current;
       switch (key) {
         case 'status':
-          result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.status = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'country':
-          result.country = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.country = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'city':
-          result.city = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.city = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'zip':
-          result.zip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.zip = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'lat':
-          result.lat = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.lat = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'lon':
-          result.lon = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.lon = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
       }
     }
@@ -93,8 +85,7 @@ class _$Location extends Location {
   @override
   final double lon;
 
-  factory _$Location([void Function(LocationBuilder)? updates]) =>
-      (new LocationBuilder()..update(updates)).build();
+  factory _$Location([void Function(LocationBuilder)? updates]) => (new LocationBuilder()..update(updates)).build();
 
   _$Location._(
       {required this.status,
@@ -113,8 +104,7 @@ class _$Location extends Location {
   }
 
   @override
-  Location rebuild(void Function(LocationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Location rebuild(void Function(LocationBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   LocationBuilder toBuilder() => new LocationBuilder()..replace(this);
@@ -134,12 +124,7 @@ class _$Location extends Location {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, status.hashCode), country.hashCode),
-                    city.hashCode),
-                zip.hashCode),
-            lat.hashCode),
+        $jc($jc($jc($jc($jc(0, status.hashCode), country.hashCode), city.hashCode), zip.hashCode), lat.hashCode),
         lon.hashCode));
   }
 
@@ -160,27 +145,39 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   _$Location? _$v;
 
   String? _status;
+
   String? get status => _$this._status;
+
   set status(String? status) => _$this._status = status;
 
   String? _country;
+
   String? get country => _$this._country;
+
   set country(String? country) => _$this._country = country;
 
   String? _city;
+
   String? get city => _$this._city;
+
   set city(String? city) => _$this._city = city;
 
   String? _zip;
+
   String? get zip => _$this._zip;
+
   set zip(String? zip) => _$this._zip = zip;
 
   double? _lat;
+
   double? get lat => _$this._lat;
+
   set lat(double? lat) => _$this._lat = lat;
 
   double? _lon;
+
   double? get lon => _$this._lon;
+
   set lon(double? lon) => _$this._lon = lon;
 
   LocationBuilder();
@@ -214,12 +211,9 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   _$Location build() {
     final _$result = _$v ??
         new _$Location._(
-            status: BuiltValueNullFieldError.checkNotNull(
-                status, 'Location', 'status'),
-            country: BuiltValueNullFieldError.checkNotNull(
-                country, 'Location', 'country'),
-            city:
-                BuiltValueNullFieldError.checkNotNull(city, 'Location', 'city'),
+            status: BuiltValueNullFieldError.checkNotNull(status, 'Location', 'status'),
+            country: BuiltValueNullFieldError.checkNotNull(country, 'Location', 'country'),
+            city: BuiltValueNullFieldError.checkNotNull(city, 'Location', 'city'),
             zip: BuiltValueNullFieldError.checkNotNull(zip, 'Location', 'zip'),
             lat: BuiltValueNullFieldError.checkNotNull(lat, 'Location', 'lat'),
             lon: BuiltValueNullFieldError.checkNotNull(lon, 'Location', 'lon'));

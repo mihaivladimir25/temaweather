@@ -7,7 +7,7 @@ import 'package:weatherapp/src/models/app_state.dart';
 import 'package:weatherapp/src/models/location.dart';
 import 'package:weatherapp/src/models/weather.dart';
 
-class AppMiddleware{
+class AppMiddleware {
   const AppMiddleware({required LocationApi locationApi, required WeatherApi weatherApi})
       : _locationApi = locationApi,
         _weatherApi = weatherApi;
@@ -15,7 +15,7 @@ class AppMiddleware{
   final LocationApi _locationApi;
   final WeatherApi _weatherApi;
 
-  List<Middleware<AppState>> get middleware{
+  List<Middleware<AppState>> get middleware {
     return <Middleware<AppState>>[
       TypedMiddleware<AppState, GetLocation>(_getLocation),
       TypedMiddleware<AppState, GetWeather>(_getWeather),
@@ -25,24 +25,23 @@ class AppMiddleware{
   Future<void> _getLocation(Store<AppState> store, GetLocation action, NextDispatcher next) async {
     next(action);
 
-    try{
+    try {
       final Location location = await _locationApi.getLocation();
       store.dispatch(GetLocationSuccessful(location));
       store.dispatch(GetWeather(location.lat, location.lon));
-    } catch(error) {
+    } catch (error) {
       store.dispatch(GetLocationError(error));
     }
   }
 }
 
-  Future<void> _getWeather(Store<AppState> store, GetWeather action, NextDispatcher next) async {
+Future<void> _getWeather(Store<AppState> store, GetWeather action, NextDispatcher next) async {
   next(action);
 
-  try{
+  try {
     final Weather weather = await _weatherApi.getWeather(action.lat, action.lon);
     store.dispatch(GetWeatherSuccessful(weather));
-  } catch(error) {
+  } catch (error) {
     store.dispatch(GetWeatherError(error));
   }
-}
-}
+}}
